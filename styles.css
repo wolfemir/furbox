@@ -1,14 +1,4 @@
-/* 1) Import the Matrix font files */
-@font-face {
-  font-family: "MatrixType";
-  src: url("MatrixtFont.woff2") format("woff2"),
-       url("MatrixtFont.woff") format("woff"),
-       url("MatrixtFont.ttf") format("truetype");
-  /* If the font is free for personal use only, 
-     be mindful of licensing for commercial projects. */
-}
-
-/* 2) Basic page styling: black background, using built-in sans-serif if no custom font loads */
+/* 1) Basic page + black background */
 body {
   margin: 0;
   padding: 0;
@@ -16,45 +6,55 @@ body {
   background-color: #000; /* Black background */
 }
 
-/* 3) Center your content (video + text) both horizontally & vertically */
+/* 2) Flexbox container: center content vertically & horizontally */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;  
   justify-content: center;
-  height: 100vh; /* full viewport height */
+  height: 100vh; 
 }
 
-/* 4) YouTube video container */
+/* 3) Video container with 16:9 ratio */
 .video-container {
   width: 560px;
   height: 315px;
-  max-width: 90vw; /* adapt on smaller screens */
+  max-width: 90vw;
   margin-bottom: 2rem;
   position: relative;
 }
 
-/* Let the iframe fill the container */
 .video-container iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
 
-/* 5) Use the custom Matrix font & style for the "COMING SOON" heading */
+/* 4) Coming Soon text (white, glow) */
 .fur-text {
-  font-family: "MatrixType", sans-serif; /* fallback to sans-serif if the custom font fails */
   font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  
-  /* Make it green or white, depending on preference.
-     If you want the true "Matrix" vibe, try neon green: #00ff00 */
-  color: #fff; 
-  
-  /* Subtle or strong glow effect:
-     For green "Matrix" glow, replace #000 with #00ff00 or tweak to taste. */
+  color: #fff;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* 5) Learn More button styling (green) */
+.learn-more-btn {
+  background-color: #00ff00;  /* bright green */
+  color: #000;               /* black text for contrast */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 6px #00ff00;
+  transition: 0.2s;
+}
+
+.learn-more-btn:hover {
+  box-shadow: 0 0 12px #00ff00;
 }
 
 /* 6) Responsive adjustments for smaller screens */
@@ -63,9 +63,8 @@ body {
     font-size: 2rem;
     letter-spacing: 1px;
   }
-
   .video-container {
     width: 90vw;
-    height: calc(90vw * 0.5625); /* maintain 16:9 ratio */
+    height: calc(90vw * 0.5625); /* maintain 16:9 aspect ratio */
   }
 }
