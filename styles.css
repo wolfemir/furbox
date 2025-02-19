@@ -1,11 +1,11 @@
 /* 1) Import the custom Matrix font (adjust file names/paths to match your files) */
 @font-face {
   font-family: "MatrixType";
-  src: url("MatrixtFont.ttf") format("truetype"),
+  src: url("MatrixtFont.woff2") format("woff2"),
        url("MatrixtFont.woff") format("woff"),
-       url("MatrixtFont.woff2") format("woff2");
-  /* Ensure you have rights to use this font. */
+       url("MatrixtFont.ttf") format("truetype");
 }
+  /* Ensure you have rights to use this font. */
 
 /* 2) Basic page styling: black background, default fallback font. */
 body {
