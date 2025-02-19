@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="description" content="Coming Soon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coming Soon</title>
+  <!-- Link to the same external CSS file -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <!-- Embedded YouTube video -->
+    <!-- If you have a video to autoplay on the main page, place it here -->
+    <!-- Omit or adjust as needed -->
     <div class="video-container">
       <iframe
-        src="https://www.youtube.com/embed/hvL1339luv0?autoplay=1&mute=0"
+        src="https://www.youtube.com/embed/hvL1339luv0?autoplay=1&mute=1"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
     </div>
 
-    <!-- Coming Soon text -->
+    <!-- "COMING SOON" text -->
     <h1 class="fur-text">COMING SOON</h1>
+
+    <!-- Green "Learn More" button, links to learnmore.html -->
+    <button 
+      class="learn-more-btn" 
+      onclick="window.location.href='learnmore.html'">
+      Learn More
+    </button>
   </div>
 </body>
 </html>
