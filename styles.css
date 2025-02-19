@@ -1,25 +1,35 @@
-/* 1) Basic page + black background */
+/* 1) Import the custom Matrix font (adjust file names/paths to match your files) */
+@font-face {
+  font-family: "MatrixType";
+  src: url("MatrixtFont.woff2") format("woff2"),
+       url("MatrixtFont.woff") format("woff"),
+       url("MatrixtFont.ttf") format("truetype");
+  /* Ensure you have rights to use this font. */
+}
+
+/* 2) Basic page styling: black background, default fallback font. */
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   background-color: #000; /* Black background */
+  font-family: sans-serif; /* Fallback font */
 }
 
-/* 2) Flexbox container: center content vertically & horizontally */
+/* 3) Centered container using flexbox (for any main content) */
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
   justify-content: center;
-  height: 100vh; 
+  height: 100vh; /* full viewport height for perfect centering */
+  text-align: center; /* optional: center any inline text */
 }
 
-/* 3) Video container with 16:9 ratio */
+/* 4) Video container with 16:9 aspect ratio (for your YouTube iframe) */
 .video-container {
   width: 560px;
   height: 315px;
-  max-width: 90vw;
+  max-width: 90vw;  /* scale down on small screens */
   margin-bottom: 2rem;
   position: relative;
 }
@@ -30,34 +40,60 @@ body {
   border: none;
 }
 
-/* 4) Coming Soon text (white, glow) */
+/* 5) "COMING SOON" heading in Matrix-style neon green */
 .fur-text {
+  font-family: "MatrixType", sans-serif; /* Use Matrix font, fallback to sans-serif */
   font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #fff;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  color: #00ff00; /* Neon-green Matrix color */
+
+  /* Glowing effect */
+  text-shadow:
+    0 0 5px  #00ff00,
+    0 0 10px #00ff00,
+    0 0 20px #00ff00,
+    0 0 40px #00ff00;
+  
+  margin-bottom: 2rem; /* space above the button */
 }
 
-/* 5) Learn More button styling (green) */
+/* 6) "Learn More" button: black background, green text, Matrix font */
 .learn-more-btn {
-  background-color: #00ff00;  /* bright green */
-  color: #000;               /* black text for contrast */
-  border: none;
-  padding: 0.75rem 1.5rem;
+  font-family: "MatrixType", sans-serif;
   font-size: 1rem;
-  font-weight: bold;
+  letter-spacing: 1px;
   text-transform: uppercase;
+
+  /* Colors: black background, neon-green text */
+  background-color: #000;
+  color: #00ff00;
+
+  /* Green border & subtle rounding */
+  border: 2px solid #00ff00;
+  border-radius: 4px;
+
+  /* Sizing & spacing */
+  padding: 0.75rem 1.5rem;
+
+  /* Cursor and transition for hover effect */
   cursor: pointer;
-  box-shadow: 0 0 6px #00ff00;
-  transition: 0.2s;
+  transition: box-shadow 0.2s;
+
+  /* Glow on the text itself */
+  text-shadow:
+    0 0 2px  #00ff00,
+    0 0 6px  #00ff00;
 }
 
+/* Intensify glow on hover */
 .learn-more-btn:hover {
-  box-shadow: 0 0 12px #00ff00;
+  box-shadow:
+    0 0 10px #00ff00,
+    0 0 20px #00ff00;
 }
 
-/* 6) Responsive adjustments for smaller screens */
+/* 7) Responsive tweaks for smaller screens */
 @media (max-width: 600px) {
   .fur-text {
     font-size: 2rem;
@@ -65,6 +101,6 @@ body {
   }
   .video-container {
     width: 90vw;
-    height: calc(90vw * 0.5625); /* maintain 16:9 aspect ratio */
+    height: calc(90vw * 0.5625); /* maintain 16:9 ratio */
   }
 }
