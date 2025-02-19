@@ -19,10 +19,10 @@ body {
 
 /* 3. Style the "COMING SOON" text */
 .fur-text {
-  font-size: 4rem;
+  font-size: 8rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #b5651d;
+  letter-spacing: 6px;
+  color: 	#FFFFFF;
   
   /* Optional subtle shadow or "furry" effect */
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
