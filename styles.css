@@ -1,9 +1,9 @@
 /* 1) Import the custom Matrix font (adjust file names/paths to match your files) */
 @font-face {
   font-family: "MatrixType";
-  src: url("MatrixtFont.ttf") format("woff2"),
+  src: url("MatrixtFont.ttf") format("truetype"),
        url("MatrixtFont.woff") format("woff"),
-       url("MatrixtFont.woff2") format("truetype");
+       url("MatrixtFont.woff2") format("woff2");
   /* Ensure you have rights to use this font. */
 }
 
