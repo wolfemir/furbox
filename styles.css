@@ -1,52 +1,55 @@
-/* Reset body margins */
+/* 1. Reset body margins */
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #fefefe; /* Light background to make the cat stand out */
+  background-color: #fdfdfd; /* Light background to highlight the cat */
 }
 
-/* Center the container vertically and horizontally */
+/* 2. Center the container both vertically and horizontally */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh; /* Make container fill full viewport height */
 }
 
-/* Cat image styling */
+/* 3. Style the cat image */
 .center-cat {
+  width: 300px;   /* Ensure a fixed width so it's easily centered */
+  height: 300px;  /* Matching height to keep it square */
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  max-width: 300px;
-  width: 100%;
-  height: auto;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 2rem;
 }
 
-/* Fur-style text effect */
+/* 4. Fur-style text effect */
 .fur-text {
   font-size: 3rem;
-  color: #b5651d; /* A cat-fur-like brown */
-  position: relative;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: #b5651d; /* Brownish cat-fur color */
 
-  /* Some text shadow to give it a "furry" vibe */
-  text-shadow: 
-     2px 2px 0 #f6e6da,
-     -2px 2px 0 #f6e6da,
-     2px -2px 0 #f6e6da,
-     -2px -2px 0 #f6e6da,
-     1px 1px 0 #cfa88c,
-     -1px 1px 0 #cfa88c,
-     1px -1px 0 #cfa88c,
-     -1px -1px 0 #cfa88c;
+  /* Create a “furry” effect using multiple text-shadows */
+  text-shadow:
+    2px 2px 0 #f6e6da,
+    -2px 2px 0 #f6e6da,
+    2px -2px 0 #f6e6da,
+    -2px -2px 0 #f6e6da,
+    1px 1px 0 #cfa88c,
+    -1px 1px 0 #cfa88c,
+    1px -1px 0 #cfa88c,
+    -1px -1px 0 #cfa88c;
 }
 
-/* Adjust text size for smaller screens */
+/* 5. Responsive adjustments for smaller screens */
 @media (max-width: 600px) {
+  .center-cat {
+    width: 200px;
+    height: 200px;
+  }
   .fur-text {
     font-size: 2rem;
     letter-spacing: 1px;
