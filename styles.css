@@ -1,57 +1,55 @@
-/* 1. Reset body margins */
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #fdfdfd; /* Light background to highlight the cat */
+  background-color: #fff;
 }
 
-/* 2. Center the container both vertically and horizontally */
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;  
   justify-content: center;
-  height: 100vh; /* Make container fill full viewport height */
+  height: 100vh;
 }
 
-/* 3. Style the cat image */
 .center-cat {
-  width: 300px;   /* Ensure a fixed width so it's easily centered */
-  height: 300px;  /* Matching height to keep it square */
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 2rem;
 }
 
-/* 4. Fur-style text effect */
+/* Fur-filled text using fur-texture.jpg */
 .fur-text {
   font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #b5651d; /* Brownish cat-fur color */
 
-  /* Create a “furry” effect using multiple text-shadows */
-  text-shadow:
-    2px 2px 0 #f6e6da,
-    -2px 2px 0 #f6e6da,
-    2px -2px 0 #f6e6da,
-    -2px -2px 0 #f6e6da,
-    1px 1px 0 #cfa88c,
-    -1px 1px 0 #cfa88c,
-    1px -1px 0 #cfa88c,
-    -1px -1px 0 #cfa88c;
+  /* Fallback color for older browsers */
+  color: #b5651d; 
+
+  /* Fur texture background */
+  background: url('fur-texture.jpg') center center / cover no-repeat;
+
+  /* The magic for “clipping” the texture into the text itself */
+  -webkit-background-clip: text; /* for Chrome/Safari */
+  background-clip: text;         /* for Firefox/Edge */
+  color: transparent;            /* overrides fallback in modern browsers */
+
+  /* Optional subtle shadow */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* 5. Responsive adjustments for smaller screens */
+/* Responsive tweaks */
 @media (max-width: 600px) {
-  .center-cat {
-    width: 200px;
-    height: 200px;
-  }
   .fur-text {
     font-size: 2rem;
     letter-spacing: 1px;
+  }
+  .center-cat {
+    width: 200px;
+    height: 200px;
   }
 }
