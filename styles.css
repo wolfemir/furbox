@@ -1,55 +1,37 @@
+/* 1. Page reset & background */
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #fff;
+  
+  /* Full-page cat background */
+  background: url("https://placekitten.com/1024/768") no-repeat center center fixed;
+  background-size: cover;
 }
 
+/* 2. Center the content (COMING SOON) both vertically & horizontally */
 .container {
   display: flex;
-  flex-direction: column;
   align-items: center;  
   justify-content: center;
-  height: 100vh;
+  height: 100vh; /* full viewport height for perfect centering */
 }
 
-.center-cat {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 2rem;
-}
-
-/* Fur-filled text using fur-texture.jpg */
+/* 3. Style the "COMING SOON" text */
 .fur-text {
-  font-size: 3rem;
+  font-size: 4rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-
-  /* Fallback color for older browsers */
-  color: #b5651d; 
-
-  /* Fur texture background */
-  background: url('fur-texture.jpg') center center / cover no-repeat;
-
-  /* The magic for “clipping” the texture into the text itself */
-  -webkit-background-clip: text; /* for Chrome/Safari */
-  background-clip: text;         /* for Firefox/Edge */
-  color: transparent;            /* overrides fallback in modern browsers */
-
-  /* Optional subtle shadow */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  letter-spacing: 3px;
+  color: #b5651d;
+  
+  /* Optional subtle shadow or "furry" effect */
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive tweaks */
+/* 4. Responsive adjustment for smaller screens */
 @media (max-width: 600px) {
   .fur-text {
-    font-size: 2rem;
+    font-size: 2.5rem;
     letter-spacing: 1px;
-  }
-  .center-cat {
-    width: 200px;
-    height: 200px;
   }
 }
