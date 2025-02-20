@@ -1,36 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Coming Soon">
+  <meta charset="UTF-8">
+  <meta name="description" content="Coming Soon - Furbox">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>furbox</title>
+  <title>Furbox - Coming Soon</title>
+
+  <!-- Favicon (cat head) -->
   <link rel="icon" href="cat.png" type="image/png">
-  <!-- Link to the same external CSS file -->
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <!-- If you have a video to autoplay on the main page, place it here -->
-    <!-- Omit or adjust as needed -->
+
+    <!-- Video Container (Optional) -->
     <div class="video-container">
       <iframe
-        src="https://www.youtube.com/embed/hvL1339luv0?autoplay=1&mute=0"
+        src="https://www.youtube.com/embed/hvL1339luv0?autoplay=1&mute=1"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
     </div>
 
-    <!-- "COMING SOON" text -->
+    <!-- Main Heading -->
     <h1 class="fur-text">COMING SOON</h1>
 
-    <!-- Green "Learn More" button, links to learnmore.html -->
-    <button 
-      class="learn-more-btn" 
-      onclick="window.location.href='learnmore.html'">
+    <!-- Announcement Button (Above Learn More) -->
+    <button class="learn-more-btn" onclick="openAnnouncement()">
+      Announcement
+    </button>
+
+    <!-- Learn More Button -->
+    <button class="learn-more-btn" onclick="window.location.href='learnmore.html'">
       Learn More
     </button>
   </div>
+
+  <!-- Popup Modal Structure -->
+  <div id="announcementPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeAnnouncement()">&times;</span>
+      <h2 class="popup-heading">Welcome to Furbox!</h2>
+      <p class="popup-text">
+        We invite everyone to help shape this website into a vibrant, community-driven space.
+        Have ideas, improvements, or new features in mind?
+        Submit a Pull Request on our GitHub repository 
+        <a href="https://github.com/wolfemir/furbox" target="_blank">https://github.com/wolfemir/furbox</a>, 
+        and we’ll do our best to incorporate the best contributions.
+        Together, let’s make Furbox great!
+      </p>
+    </div>
+  </div>
+
+  <!-- Simple JavaScript to open/close the popup -->
+  <script>
+    function openAnnouncement() {
+      document.getElementById('announcementPopup').style.display = 'block';
+    }
+
+    function closeAnnouncement() {
+      document.getElementById('announcementPopup').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
