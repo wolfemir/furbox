@@ -39,23 +39,7 @@ body {
   border: none;
 }
 
-/* 5) "NO REFUNDS" heading in neon green Matrix style */
-.no-refunds {
-  font-family: "MatrixType", sans-serif;
-  font-size: 4rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #00ff00;
-  text-shadow:
-    0 0 5px  #00ff00,
-    0 0 10px #00ff00,
-    0 0 20px #00ff00,
-    0 0 40px #00ff00;
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* 6) "COMING SOON" heading in neon green Matrix style */
+/* 5) "COMING SOON" heading in neon green Matrix style */
 .fur-text {
   font-family: "MatrixType", sans-serif;
   font-size: 3rem;
@@ -70,7 +54,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* 7) Buttons in black background, green text, matrix font */
+/* 6) Buttons in black background, green text, matrix font */
 .learn-more-btn {
   font-family: "MatrixType", sans-serif;
   font-size: 1rem;
@@ -95,7 +79,7 @@ body {
     0 0 20px #00ff00;
 }
 
-/* 8) Popup (modal) styling */
+/* 7) Popup (modal) styling */
 .popup {
   display: none;             /* hidden by default */
   position: fixed;           /* stay in place */
@@ -151,7 +135,7 @@ body {
   text-decoration: underline;
 }
 
-/* 9) Responsive tweak for small screens */
+/* 8) Responsive tweak for small screens */
 @media (max-width: 600px) {
   .fur-text {
     font-size: 2rem;
@@ -166,4 +150,34 @@ body {
     margin-top: 5vh;
     padding: 1.5rem;
   }
+}
+
+/* 9) Styling for "NO REFUNDS" section */
+.no-refunds-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Space between the cat GIF and text */
+  margin-top: 20px;
+}
+
+/* Adjust size of the GIF container */
+.tenor-gif-embed {
+  max-width: 100px; /* Adjust size as needed */
+  flex-shrink: 0;
+}
+
+/* Styling for "NO REFUNDS" */
+.no-refunds {
+  font-family: "MatrixType", sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #00ff00;
+  text-shadow:
+    0 0 5px  #00ff00,
+    0 0 10px #00ff00,
+    0 0 20px #00ff00,
+    0 0 40px #00ff00;
+  text-align: center;
 }
