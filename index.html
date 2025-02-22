@@ -17,6 +17,17 @@ Please accept this pr, for the good of the cats.-->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Ad Popups -->
+  <div class="ad-popup ad-popup-1">
+    <span class="ad-close" onclick="hideAd(this.parentElement)">×</span>
+  </div>
+  <div class="ad-popup ad-popup-2">
+    <span class="ad-close" onclick="hideAd(this.parentElement)">×</span>
+  </div>
+  <div class="ad-popup ad-popup-3">
+    <span class="ad-close" onclick="hideAd(this.parentElement)">×</span>
+  </div>
+
   <div class="container">
 
     <!-- Video Container (Optional) -->
@@ -38,7 +49,7 @@ Please accept this pr, for the good of the cats.-->
     </button>
 
     <!-- Learn More Button -->
-    <button class="learn-more-btn" onclick="window.location.href='learnmore.html'">
+    <button class="learn-more-btn" onclick="startLoadingSequence()">
       Learn More
     </button>
 
@@ -75,6 +86,17 @@ Please accept this pr, for the good of the cats.-->
     </div>
   </div>
 
+  <!-- Loading Popup Modal -->
+  <div id="loadingPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeLoadingPopup()">&times;</span>
+      <h2 class="popup-heading" id="loadingMessage">Loading...</h2>
+      <p class="popup-text" id="loadingDetails">
+        Attempting to connect to our premium servers...
+      </p>
+    </div>
+  </div>
+
   <!-- Simple JavaScript to open/close the popup -->
   <script>
     function openAnnouncement() {
@@ -90,6 +112,66 @@ Please accept this pr, for the good of the cats.-->
 
     function closeSubscribe() {
       document.getElementById('subscribePopup').style.display = 'none';
+    }
+
+    // Loading sequence
+    const loadingMessages = [
+      { title: "Connecting...", text: "Attempting to reach our premium servers..." },
+      { title: "Still Loading...", text: "Our cat stepped on the keyboard, please wait..." },
+      { title: "Getting There...", text: "The hamsters are running as fast as they can!" },
+      { title: "Final Message", text: "No ETA™ - But thanks for your patience! ¯\\_(ツ)_/¯" }
+    ];
+
+    let currentAttempt = 0;
+    let loadingTimer;
+
+    // Replace the direct navigation with loading sequence
+    document.querySelector('button[onclick="window.location.href=\'learnmore.html\'"]')
+      .setAttribute('onclick', 'startLoadingSequence()');
+
+    function startLoadingSequence() {
+      currentAttempt = 0;
+      showLoadingPopup();
+      tryLoading();
+    }
+
+    function showLoadingPopup() {
+      document.getElementById('loadingPopup').style.display = 'block';
+    }
+
+    function closeLoadingPopup() {
+      document.getElementById('loadingPopup').style.display = 'none';
+      clearTimeout(loadingTimer);
+      currentAttempt = 0;
+    }
+
+    function tryLoading() {
+      if (currentAttempt >= loadingMessages.length) {
+        document.getElementById('loadingMessage').textContent = "Success!";
+        document.getElementById('loadingDetails').textContent = 
+          "Finally! Redirecting to learn more...";
+        
+        setTimeout(() => {
+          window.location.href = 'learnmore.html';
+        }, 2000);
+        return;
+      }
+
+      const message = loadingMessages[currentAttempt];
+      document.getElementById('loadingMessage').textContent = message.title;
+      document.getElementById('loadingDetails').textContent = message.text;
+
+      currentAttempt++;
+      const delay = Math.random() * 3000 + 2000;
+      loadingTimer = setTimeout(tryLoading, delay);
+    }
+
+    function hideAd(adElement) {
+      adElement.style.display = 'none';
+      // Respawn the ad after 5-10 seconds
+      setTimeout(() => {
+        adElement.style.display = 'block';
+      }, Math.random() * 5000 + 5000);
     }
   </script>
 </body>
