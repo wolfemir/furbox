@@ -57,6 +57,11 @@ Please accept this pr, for the good of the cats.-->
     <button class="learn-more-btn" onclick="openSubscribe()">
       ! Subscribe Now !
     </button>
+
+        <!-- Cat Torrent Button -->
+    <button class="learn-more-btn" onclick="openDldCatTorrent()">
+      ! Cat Torrent !
+    </button>
   </div>
 
   <!-- Popup Modal Structure -->
@@ -86,6 +91,19 @@ Please accept this pr, for the good of the cats.-->
     </div>
   </div>
 
+    <div id="dldcattorrentPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeDldCatTorrent()">&times;</span>
+      <h2 class="popup-heading">Welcome to Furbox!</h2>
+      <p class="popup-text">
+          Download the Cat Torrent!
+      <a href="freaking awesome cat videos and photos.zip.torrent" download="freaking awesome cat videos and photos.zip.torrent">
+        Download
+      </a>
+      </p>
+    </div>
+  </div>
+
   <!-- Loading Popup Modal -->
   <div id="loadingPopup" class="popup">
     <div class="popup-content">
@@ -106,12 +124,21 @@ Please accept this pr, for the good of the cats.-->
     function closeAnnouncement() {
       document.getElementById('announcementPopup').style.display = 'none';
     }
-        function openSubscribe() {
+    
+    function openSubscribe() {
       document.getElementById('subscribePopup').style.display = 'block';
     }
 
     function closeSubscribe() {
       document.getElementById('subscribePopup').style.display = 'none';
+    }
+
+    function openDldCatTorrent() {
+      document.getElementById('dldcattorrentPopup').style.display = 'block';
+    }
+    
+    function closeDldCatTorrent() {
+      document.getElementById('dldcattorrentPopup').style.display = 'none';
     }
 
     // Loading sequence
