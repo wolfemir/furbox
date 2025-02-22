@@ -14,6 +14,62 @@ body {
   font-family: sans-serif; /* fallback */
 }
 
+/* Ad popup styling */
+.ad-popup {
+  position: fixed;
+  width: 500px;    /* Changed from 728px to 500px */
+  height: 90px;    /* Changed back to standard height */
+  background: url('furbox.png') center/contain;
+  z-index: 1000;
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 20px #00ff00;
+  animation: float 8s linear infinite;
+}
+
+.ad-popup-1 { animation-delay: 0s; }
+.ad-popup-2 { animation-delay: 2s; }
+.ad-popup-3 { animation-delay: 4s; }
+
+@keyframes float {
+  0% { 
+    transform: translate(-100%, 0) scale(1);
+    top: 20%;
+    left: -50%;
+  }
+  25% { 
+    transform: translate(0, 0);
+    top: 15%;
+    left: 20%;
+  }
+  50% { 
+    transform: translate(0, 0) scale(1);
+    top: 45%;
+    left: 30%;
+  }
+  75% { 
+    transform: translate(0, 0);
+    top: 75%;
+    left: 20%;
+  }
+  100% { 
+    transform: translate(100%, 0) scale(1);
+    top: 20%;
+    left: 100%;
+  }
+}
+
+/* Close button for ads */
+.ad-close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #00ff00;
+  font-size: 24px;
+  cursor: pointer;
+  font-family: "MatrixType", sans-serif;
+  text-shadow: 0 0 5px #00ff00;
+}
+
 /* 3) Center container */
 .container {
   display: flex;
@@ -22,6 +78,7 @@ body {
   justify-content: center;
   height: 100vh;
   text-align: center;
+  padding: 100px 0;  /* Make room for ad banners */
 }
 
 /* 4) Video container for the top embedded video */
@@ -149,6 +206,36 @@ body {
     width: 90%;
     margin-top: 5vh;
     padding: 1.5rem;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .ad-popup {
+    width: 280px;  /* Adjusted for new ratio */
+    height: 50px;  /* Adjusted for new ratio */
+    font-size: 12px;
+  }
+
+  .ad-close {
+    font-size: 16px;
+    top: 2px;
+    right: 2px;
+  }
+
+  @keyframes float {
+    0% { 
+      transform: translate(-100%, 0) scale(0.8);
+      left: -30%;
+    }
+    50% { 
+      transform: translate(0, 0) scale(0.8);
+      left: 10%;
+    }
+    100% { 
+      transform: translate(100%, 0) scale(0.8);
+      left: 90%;
+    }
   }
 }
 
