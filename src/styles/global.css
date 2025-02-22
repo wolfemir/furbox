@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+    --font-matrix: "MatrixType", system-ui;
+    --font-matrix-display: "MatrixType Display", system-ui;
+    --font-sans: "Inter", system-ui;
+    --color-background: #12141b;
+}
+
+@font-face {
+    font-family: "MatrixType";
+    src: local("MatrixType"), local("MatrixType-Regular"),
+        url("/fonts/MatrixType-Regular.woff2") format("woff2"),
+        url("/fonts/MatrixType-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MatrixType";
+    src: local("MatrixType Bold"), local("MatrixType-Bold"),
+        url("/fonts/MatrixType-Bold.woff2") format("woff2"),
+        url("/fonts/MatrixType-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MatrixType Display";
+    src: local("MatrixType Display"), local("MatrixTypeDisplay-Regular"),
+        url("/fonts/MatrixTypeDisplay-Regular.woff2") format("woff2"),
+        url("/fonts/MatrixTypeDisplay-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MatrixType Display";
+    src: local("MatrixType Display Bold"), local("MatrixTypeDisplay-Bold"),
+        url("/fonts/MatrixTypeDisplay-Bold.woff2") format("woff2"),
+        url("/fonts/MatrixTypeDisplay-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: local("Inter"), local("Inter-Regular"),
+        url("/fonts/inter-latin-400-normal.woff2") format("woff2"),
+        url("/fonts/inter-latin-400-normal.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: local("Inter Medium"), local("Inter-Medium"),
+        url("/fonts/inter-latin-500-normal.woff2") format("woff2"),
+        url("/fonts/inter-latin-500-normal.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: local("Inter SemiBold"), local("Inter-SemiBold"),
+        url("/fonts/inter-latin-600-normal.woff2") format("woff2"),
+        url("/fonts/inter-latin-600-normal.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: local("Inter Bold"), local("Inter-Bold"),
+        url("/fonts/inter-latin-700-normal.woff2") format("woff2"),
+        url("/fonts/inter-latin-700-normal.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

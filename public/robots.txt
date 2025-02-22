@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://furbox.app/sitemap-index.xml
