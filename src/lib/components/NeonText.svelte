@@ -5,7 +5,7 @@
 </script>
 
 <span class={cn('neon-text font-matrix tracking-wider uppercase', className)} {...restProps}>
-	{@render children()}
+	{@render children?.()}
 </span>
 
 <style>

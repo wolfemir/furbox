@@ -1,11 +1,12 @@
 <script lang="ts">
+	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils';
 
-	let { class: className = '', children, ...restProps } = $props();
+	let { class: className, children, ...restProps }: HTMLButtonAttributes = $props();
 </script>
 
 <button class={cn('neon-button font-matrix tracking-wider uppercase', className)} {...restProps}>
-	{@render children()}
+	{@render children?.()}
 </button>
 
 <style>
