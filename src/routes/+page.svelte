@@ -57,7 +57,7 @@
 					<NeonButton class="w-full">Download Torrent</NeonButton>
 				</a>
 				<a
-					href="https://drive.google.com/uc?export=download&id=1SC2753Z_te-jUKb_iczcJl5hbnhx6HdJ"
+					href="https://download.furbox.app/api/shares/awesome-cat/files/456e06b2-6f14-462d-829c-d73bb366523d"
 					target="_blank"
 				>
 					<NeonButton class="w-full">Direct Download</NeonButton>
