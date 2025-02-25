@@ -48,7 +48,7 @@
 		</NeonAnnouncement>
 
 		<a href="/gallery">
-			<NeonButton class="w-full">Gallery</NeonButton>
+			<NeonButton class="w-full">Catland</NeonButton>
 		</a>
 
 		<NeonAnnouncement buttonText="! Cat Torrent !" announcementHeading="Premium Content">
