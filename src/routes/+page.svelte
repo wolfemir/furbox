@@ -2,8 +2,6 @@
 	import NeonText from '$lib/components/NeonText.svelte';
 	import NeonButton from '$lib/components/NeonButton.svelte';
 	import NeonAnnouncement from '$lib/components/NeonAnnouncement.svelte';
-
-	let showAnnouncement = $state(false);
 </script>
 
 <svelte:head>
@@ -48,6 +46,10 @@
 				Subscriptions coming soon! (We need to find a real payment vendor that accepts catnip.)
 			</p>
 		</NeonAnnouncement>
+
+		<a href="/gallery">
+			<NeonButton class="w-full">Gallery</NeonButton>
+		</a>
 
 		<NeonAnnouncement buttonText="! Cat Torrent !" announcementHeading="Premium Content">
 			<p class="mt-4 text-base md:text-lg lg:text-xl">Download awesome cat content!</p>
